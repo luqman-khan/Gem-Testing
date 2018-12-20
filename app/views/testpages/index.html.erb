@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Testpages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Hours worked</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testpages.each do |testpage| %>
+      <tr>
+        <td><%= testpage.name %></td>
+        <td><%= testpage.start_date %></td>
+        <td><%= testpage.end_date %></td>
+        <td><%= testpage.hours_worked %></td>
+        <td><%= link_to 'Show', testpage %></td>
+        <td><%= link_to 'Edit', edit_testpage_path(testpage) %></td>
+        <td><%= link_to 'Destroy', testpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testpage', new_testpage_path %>
